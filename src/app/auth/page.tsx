@@ -9,15 +9,14 @@ import { redirect } from 'next/navigation'
 export default function Auth() {
 
     const { session } = useAuth()
-
-    if (session) {
-        return redirect("/home")
-    }
-
     const [isShowSignUp, setIsShowSignUp] = useState<boolean>(false)
 
     const handleToggleShowSignUp = () => {
         setIsShowSignUp(prev => !prev)
+    }
+
+    if (session) {
+        return redirect("/home")
     }
 
     return (
