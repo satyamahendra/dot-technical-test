@@ -67,7 +67,7 @@ export async function signup(formData: FormData): Promise<ActionResult> {
 		const session = await lucia.createSession(userId, {});
 		const sessionCookie = lucia.createSessionCookie(session.id);
 		cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
-		redirect("/");
+		redirect("/home");
 
 	} catch (error) {
 		return { error: "Something went wrong" }
@@ -133,5 +133,5 @@ export async function login(formData: FormData): Promise<ActionResult> {
 	const session = await lucia.createSession(existingUser.id, {});
 	const sessionCookie = lucia.createSessionCookie(session.id);
 	cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
-	return redirect("/");
+	return redirect("/home");
 }

@@ -11,7 +11,7 @@ export default function auth() {
     const { session } = useAuth()
 
     if (session) {
-        return redirect("/")
+        return redirect("/home")
     }
 
     const [isShowSignUp, setIsShowSignUp] = useState<boolean>(false)
@@ -28,6 +28,11 @@ export default function auth() {
                     <SignupForm handleToggleShowSignUp={handleToggleShowSignUp} /> :
                     <LoginForm handleToggleShowSignUp={handleToggleShowSignUp} />
                 }
+                <div className='border p-4'>
+                    <p>username: qwe123</p>
+                    <p>password: qwe123</p>
+                    *atau bikin sendiri dengan signup juga bisa
+                </div>
             </div>
         </div>
     )

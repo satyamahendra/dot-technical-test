@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import ShippingCostForm from './components/ShippingCostForm'
 import { checkShippingCost } from './actions'
 import { formatPrice } from '@/app/utils/helpers/formatPrice'
-import { PiAirplane } from 'react-icons/pi'
+import { PiAirplane, PiMagnifyingGlass, PiX } from 'react-icons/pi'
 
 interface Cost {
     service: string
@@ -41,7 +41,6 @@ export default function Home() {
         <section className='flex-1 flex flex-col h-full'>
             <ShippingCostForm handleSubmit={handleSubmit} />
 
-
             <div className='border-t mt-4 pt-4 w-full'></div>
 
             {
@@ -70,7 +69,10 @@ export default function Home() {
                         )}
                     </ul>
                 ) : (
-                    <div>{shippingResult ? "Silakan Mulai Mencari" : "Data Tidak Ditemukan"}</div>
+                    <div className='flex flex-col flex-1 gap-4 items-center justify-center text-gray-400'>
+                        <div className='text-2xl'>{shippingResult ? <PiMagnifyingGlass /> : ":("}</div>
+                        <div className=''>{shippingResult ? "Silakan Mulai Mencari" : "Data Tidak Ditemukan"}</div>
+                    </div>
                 )
             }
 
