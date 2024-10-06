@@ -8,8 +8,8 @@ interface SignupFormProps {
 
 export default function LoginForm({ handleToggleShowSignUp }: SignupFormProps) {
 
-    function handleLogin(formData: FormData) {
-        login(formData)
+    async function handleLogin(formData: FormData) {
+        await login(formData)
     }
 
     return (
