@@ -24,7 +24,7 @@ export default function Navbar() {
     const { user } = useAuth()
 
     async function handleLogout() {
-        const res = await logout()
+        await logout()
     }
 
     return (
@@ -33,7 +33,7 @@ export default function Navbar() {
                 <h1 className='text-center font-light text-lg'>Ongkir<span className='font-semibold text-blue-600'>in</span></h1>
 
                 <nav className='flex flex-col gap-2 mt-8'>
-                    {navsArray.map((nav, index) =>
+                    {navsArray.map((nav) =>
                         <Link key={nav.name} href={nav.path} className='flex items-center gap-3 hover:bg-gray-100 rounded-lg duration-200 px-4 py-2'>
                             <div className='text-lg'>{nav.icon}</div>
                             <span>{nav.name}</span>
@@ -52,7 +52,7 @@ export default function Navbar() {
             </div>
 
             <div className='sm:hidden fixed bottom-0 left-0 border-t w-screen flex items-center justify-center'>
-                {navsArray.map((nav, index) =>
+                {navsArray.map((nav) =>
                     <Link key={nav.name} href={nav.path} className='flex flex-col items-center gap-1.5 hover:bg-gray-100 rounded-lg duration-200 px-4 py-2'>
                         <div className='text-lg'>{nav.icon}</div>
                         <span>{nav.name}</span>

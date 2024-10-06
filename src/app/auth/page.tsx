@@ -6,7 +6,7 @@ import LoginForm from './components/LoginForm'
 import { useAuth } from '@/context/AuthContext'
 import { redirect } from 'next/navigation'
 
-export default function auth() {
+export default function Auth() {
 
     const { session } = useAuth()
 

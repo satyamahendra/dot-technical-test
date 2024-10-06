@@ -11,7 +11,7 @@ interface SignupFormProps {
 export default function SignupForm({ handleToggleShowSignUp }: SignupFormProps) {
 
     function handleSignup(formData: FormData) {
-        const res = signup(formData)
+        signup(formData)
     }
 
 

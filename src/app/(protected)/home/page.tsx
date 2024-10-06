@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import ShippingCostForm from './components/ShippingCostForm'
 import { checkShippingCost } from './actions'
 import { formatPrice } from '@/app/utils/helpers/formatPrice'
-import { PiAirplane, PiMagnifyingGlass, PiX } from 'react-icons/pi'
+import { PiAirplane, PiMagnifyingGlass } from 'react-icons/pi'
 
 interface Cost {
     service: string
@@ -47,7 +47,7 @@ export default function Home() {
                 isLoading ? (
                     <ul className='flex flex-col gap-4 flex-1 overflow-auto'>
                         {[1, 2, 3].map((item: number) => (
-                            <div className='flex px-4 justify-between py-2 animate-pulse bg-gray-100 h-[100px]'>
+                            <div key={item} className='flex px-4 justify-between py-2 animate-pulse bg-gray-100 h-[100px]'>
                             </div>
                         ))}
                     </ul>

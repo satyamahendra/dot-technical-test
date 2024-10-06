@@ -70,6 +70,7 @@ export async function signup(formData: FormData): Promise<ActionResult> {
 		redirect("/home");
 
 	} catch (error) {
+		console.log(error);
 		return { error: "Something went wrong" }
 
 	}

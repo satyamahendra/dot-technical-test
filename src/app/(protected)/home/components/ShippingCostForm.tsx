@@ -1,6 +1,6 @@
 "use client"
 
-import React, { FormEvent, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getCities } from '../actions'
 import { City } from '@/types/city'
 import CitySelectInput from './CitySelectInput'
