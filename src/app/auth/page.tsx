@@ -20,8 +20,8 @@ export default function Auth() {
     }
 
     return (
-        <div className='w-screen h-screen flex justify-center items-center'>
-            <div className="w-1/6">
+        <div className='w-screen h-screen flex items-center justify-center'>
+            <div className="duration-200 w-full sm:w-2/5 md:w-1/5">
                 <h1 className='text-center text-lg' onClick={handleToggleShowSignUp}>{isShowSignUp ? "Sign Up" : "Log In"}</h1>
                 {isShowSignUp ?
                     <SignupForm handleToggleShowSignUp={handleToggleShowSignUp} /> :
@@ -30,7 +30,8 @@ export default function Auth() {
                 <div className='border p-4'>
                     <p>username: qwe123</p>
                     <p>password: qwe123</p>
-                    *atau bikin sendiri dengan signup juga bisa
+                    <p>*atau bikin sendiri dengan signup juga bisa</p>
+                    <p>*kalau error client side error itu refresh aja, kalau di local aman, kalo vercel ngga aman</p>
                 </div>
             </div>
         </div>
